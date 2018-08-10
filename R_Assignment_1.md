@@ -4,59 +4,25 @@
 ### Part A
 
 According to the conditions given by the questin, we know that:
-$$
-\\begin{align}
-&P(RC) = 0.30\\\\
-&P(TC) = 0.70\\\\
-&P(Yes|RC) = 0.50\\\\
-&P(Yes) = 0.65\\\\
-\\end{align}
-$$
- Also, according to the Law of total probability, we know:
-$$
-\\begin{align}
-P(Yes) &= P(Yes|RC) \\cdot P(RC) + P(Yes|TC) \\cdot P(TC)\\\\
-0.65 &= 0.50 \\times 0.30 + P(Yes|TC) \\times 0.7
-\\end{align}
-$$
 
-$$
-\\begin{align}
-P(Yes|TC) &= \\frac{0.65 - 0.50 \\times 0.30}{0.7}\\\\
-&= \\frac{5}{7} \\approx 0.71
-\\end{align}
-$$
+![](Pictures/1.png)
+
+Also, according to the Law of total probability, we know:
+
+![](Pictures/2.png)
+
+![](Pictures/3.png)
 
 ### Part B
 
 From the conditions given by the problem, we know that:
-$$
-\\begin{align}
-&P(Disease) = 0.000025\\\\
-&P(No Disease) = 0.999975\\\\
-&P(Positive|Disease) = 0.993\\\\
-&P(Negative|No Disease) = 0.9999\\\\
-&P(Positive|No Disease) = 0.0001
-\\end{align}
-$$
- According to the Law of total probability, we know:
-$$
-\\begin{align}
-P(Postive) &= P(Positive|Disease) \\cdot P(Disease) + P(Positive|No Disease) \\cdot P(No Disease)\\\\
-&= 0.993 \\times 0.000025 + 0.0001 \\times 0.999975\\\\
-&= 0.00010248225
-\\end{align}
-$$
+
+![](Pictures/4.png)
+
+According to the Law of total probability, we know: ![](Pictures/5.png)
 
 Next, based on the Bayes’ rule, we can find the P(Disease|Positive) in
-following:
-$$
-\\begin{align}
-P(Disease|Postive) &= \\frac{P(Positive|Disease) \\cdot P(Disease)}{P(Positive)}\\\\ 
-&= \\frac{0.993 \\times 0.000025}{0.00010248225}\\\\
-&\\approx 0.1989 
-\\end{align}
-$$
+following: ![](Pictures/6.png)
 
 The probability that they have the disease if they test positive is
 approximately 19.89%. We believe implementing this universal testing
@@ -413,7 +379,7 @@ after 10 years, we would be making money at about $488692.5 per year.
     # Profit/loss
     mean(sim1[,n_days]) - initial_wealth
 
-    ## [1] 973.3381
+    ## [1] 971.7663
 
     hist(sim1[,n_days]- initial_wealth, breaks=30)
 
@@ -432,7 +398,7 @@ after 10 years, we would be making money at about $488692.5 per year.
     }
     Mean_return
 
-    ## [1] 118.43971 158.94460  78.10525 437.18152 180.66702
+    ## [1] 118.43971 158.94460  78.10525 437.18152 179.09525
 
     # Calculate 5% value at risk for each assets
     for(j in 1:5){
@@ -535,7 +501,7 @@ the even split portfolio.
     # Profit/loss
     mean(sim3[,n_days]) - initial_wealth
 
-    ## [1] 2050.7
+    ## [1] 2049.969
 
     hist(sim3[,n_days]- initial_wealth, breaks=30)
 
@@ -557,24 +523,7 @@ safer portfolio.
 ### Conclusion
 
 ![We used the above table to summarize the three portfolios and their
-corresponding return/risk.](/Users/yilezhou/Desktop/Table1.png)
-$$
-\\begin{table}
-\\caption{Portfolios for 4 Weeks}
-\\centering
-\\begin{tabular}{ |p{3cm}|p{3cm}|p{3cm}|p{3cm}|}
-\\hline
-ETFs & Ratio & Expected Return & 5\\% Value at Risk\\\\
-\\hline
-SPY, TLT, LQD, EEM, VNQ & 20\\%, 20\\%, 20\\%, 20\\%, 20\\% & \\$973.34 & -\\$5,909.42\\\\
-\\hline
-SPY, TLT, LQD & 30\\%, 40\\%, 30\\% & \\$612.71 & -\\$2,946.18\\\\
-\\hline
-EEM, VNQ & 90\\%, 10\\% & \\$2,050.70 & -\\$12,858.94 \\\\
-\\hline
-\\end{tabular}
-\\end{table}
-$$
+corresponding return/risk.](Pictures/Table1.png)
 
 4. Clustering
 -------------
